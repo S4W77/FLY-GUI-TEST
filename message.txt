@@ -1,0 +1,80 @@
+local GUI = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local fly = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local close = Instance.new("TextButton")
+local TextButton = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+
+--Properties:
+
+GUI.Name = "GUI"
+GUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+GUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = GUI
+Frame.Active = true
+Frame.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+Frame.Position = UDim2.new(0.455803216, 0, 0.385826766, 0)
+Frame.Size = UDim2.new(0, 222, 0, 94)
+Frame.Visible = false
+Frame.Draggable = true
+
+fly.Name = "fly"
+fly.Parent = Frame
+fly.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+fly.Position = UDim2.new(0.110871702, 0, 0.396484971, 0)
+fly.Size = UDim2.new(0, 172, 0, 50)
+fly.Font = Enum.Font.SourceSans
+fly.Text = "Fly"
+fly.TextColor3 = Color3.fromRGB(0, 0, 0)
+fly.TextSize = 15.000
+fly.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/x0VdZff6", true))()
+	fly.Text = loaded
+	fly.TextColor3 = Color3.fromRGB(0, 0, 255)
+	wait(2)
+	fly.Font = Enum.Font.SourceSans
+	fly.Text = "Fly"
+end)
+
+UICorner.Parent = fly
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 0.700
+TextLabel.Size = UDim2.new(0, 222, 0, 30)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Fly GUI Made By S4W77"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 19.000
+
+close.Name = "close"
+close.Parent = Frame
+close.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+close.Position = UDim2.new(0.879732132, 0, -0.255319148, 0)
+close.Size = UDim2.new(0, 26, 0, 18)
+close.Font = Enum.Font.SourceSans
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(0, 0, 0)
+close.TextSize = 19.000
+close.MouseButton1Click:Connect(function()
+	Frame.Visible = false
+	TextButton = true
+end)
+
+TextButton.Parent = GUI
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.Position = UDim2.new(0.00845503435, 0, 0.618897617, 0)
+TextButton.Size = UDim2.new(0, 94, 0, 48)
+TextButton.Font = Enum.Font.SourceSansBold
+TextButton.Text = "Open"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 19.000
+TextButton.MouseButton1Click:Connect(function()
+	Frame.Visible = true
+	TextButton.Visible = false
+end)
+
+UICorner_2.Parent = TextButton
